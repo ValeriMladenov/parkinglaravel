@@ -13,11 +13,8 @@
 
 Auth::routes();
 
+Route::get( '/api/ctop',"API\\CarsController@index");
+Route::post( '/api/ctop',"API\\CarsController@index");
+
+
 Route::get( '/{any}', function () { return view('home'); })->where('any', '.*');
-
-//api
-Route::group(array('domain' => 'api.linkino.dev'), function()
-{
-    Route::get('','API\\ApiController@index');
-});
-
