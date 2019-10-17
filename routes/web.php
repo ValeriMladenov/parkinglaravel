@@ -13,6 +13,7 @@
 
 Route::get('/api/ctop', "API\\CarstoParkingController@index");
 Route::post('/api/ctop', "API\\CarstoParkingController@post");
+
 Route::get('/api/vehicles', "API\\VehiclesController@index");
 Route::post('/api/vehicles', "API\\VehiclesController@post");
 
