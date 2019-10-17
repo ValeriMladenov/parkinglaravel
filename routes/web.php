@@ -13,8 +13,9 @@
 
 Auth::routes();
 
-Route::get( '/api/ctop',"API\\CarsController@index");
-Route::post( '/api/ctop',"API\\CarsController@post");
+Route::get( '/api/ctop',"API\\CarstoParkingController@index");
+Route::post( '/api/ctop',"API\\CarstoParkingController@post");
+Route::get('/api/vehicles',"API\\VehiclesController@index");
 
 
 Route::get( '/{any}', function () { return view('home'); })->where('any', '.*');
