@@ -16,7 +16,7 @@ import {
   Col
 } from "reactstrap";
 
-class AllCars extends React.Component {
+class Taxes extends React.Component {
   render() {
     return (
       <>
@@ -25,36 +25,35 @@ class AllCars extends React.Component {
             <Col md="12">
               <Card>
                 <CardHeader>
-                  <CardTitle tag="h4">Всички превозни средства</CardTitle>
+                  <CardTitle tag="h4">Такси за превозно  средство</CardTitle>
                 </CardHeader>
                 <CardBody>
                   <Table responsive>
                     <thead className="text-primary">
                       <tr>
-                        <th>Номер на автомобил</th>
-                        <th>Регистриран на </th>
+                        <th>Тип на автомобила</th>
+                        <th>за 30мин</th>
+                        <th>за 1час</th>
+                        <th>за 2часа</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>ВР 4355 СА</td>
-                        <td>23.09.2015</td>
+                        <td>Автомобил</td>
+                        <td>1лв.</td>
+                        <td>2лв.</td>
+                        <td>3лв.</td>
                       </tr>
                       <tr>
-                        <td>ВР 4355 СА</td>
-                        <td>23.09.2015</td>
+                        <td>Мотоциклет</td>
+                        <td>1лв.</td>
+                        <td>2лв.</td>
+                        <td>3лв.</td>
                       </tr><tr>
-                        <td>ВР 4355  СА</td>
-                        <td>23.09.2015</td>
-
-                      </tr><tr>
-                        <td>ВР 4355 СА</td>
-                        <td>23.09.2015</td>
-
-                      </tr><tr>
-                        <td>ВР 4355 СА</td>
-                        <td>23.09.2015</td>
-
+                        <td>Микробус</td>
+                        <td>1лв.</td>
+                        <td>2лв.</td>
+                        <td>3лв.</td>
                       </tr>
                     </tbody>
                   </Table>
@@ -68,4 +67,4 @@ class AllCars extends React.Component {
   }
 }
 
-export default AllCars;
+export default Taxes;

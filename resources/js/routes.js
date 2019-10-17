@@ -7,12 +7,13 @@ import Dashboard from "./views/Dashboard.jsx";
 import Cars from "./views/Cars.jsx";
 import AllCars from "./views/AllCars.jsx";
 import Payments from "./views/Payments.jsx";
+import Taxes from "./views/Taxes.jsx";
 import Settings from "./views/Settings.jsx";
 var routes = [
     {
         path: "/dashboard",
         name: "Табло",
-        icon: "nc-icon nc-bank",
+        icon: "nc-layout-11",
         component: Dashboard,
         layout: "/admin"
     },
@@ -26,14 +27,21 @@ var routes = [
     {
         path: "/all",
         name: "Превозни средства",
-        icon: "nc-icon nc-tile-56",
+        icon: "nc-icon nc-bus-front-12",
         component: AllCars,
+        layout: "/admin"
+    },
+    {
+        path: "/taxes",
+        name: "Такси",
+        icon: "nc-icon nc-money-coins",
+        component: Taxes,
         layout: "/admin"
     },
     {
         path: "/payments",
         name: "Плащания",
-        icon: "nc-icon nc-money-coins",
+        icon: "nc-icon nc-credit-card",
         component: Payments,
         layout: "/admin"
     },

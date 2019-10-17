@@ -24,7 +24,7 @@ class Settings extends React.Component {
             <Col md="12">
               <Card>
                 <CardHeader>
-                  <CardTitle tag="h4">Плащания</CardTitle>
+                  <CardTitle tag="h4"> Настройки</CardTitle>
                 </CardHeader>
                 <CardBody>
                   <Table responsive>
