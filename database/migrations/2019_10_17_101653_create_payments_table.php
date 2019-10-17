@@ -18,6 +18,7 @@ class CreatePaymentsTable extends Migration
             $table->integer('user_id');
             $table->string('code');
             $table->string('price');
+            $table->string('timephp ');
             $table->timestamps();
         });
     }
