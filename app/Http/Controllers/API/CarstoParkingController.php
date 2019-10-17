@@ -17,15 +17,17 @@ class CarstoParkingController extends Controller
     {
         $cars = CarsToParkings::join('parkings', "parking_id", "=", "parkings.id")->get();
         $payment = Payments::where('code', $cars[0]->payment_code)->first();
-        $now = Carbon::now()->toTimeString();
+        $current_time = Carbon::now();
         $payment_time = $payment->created_at->format('H:i:s');
-        $paid_time = Carbon::make($payment->time)->toTimeString();
-        $time_left = ($now - $payment_time) - $paid_time;
-        return $time_left;
+        $paid_time = $payment->time;
+        $time_left = $paid_time - $current_time->diffInMinutes($payment_time);
+        if ($time_left < 0) {
+            $time_left = 'Изтекло';
+        }
 
         $data = [
             'car_number' => $cars[0]->car_number,
-            'street' => $cars[0]->parking_street,
+            'street' => $cars[0]->street,
             'payment_code' => $cars[0]->payment_code,
             'payment_time' => $time_left,
         ];
@@ -42,7 +44,7 @@ class CarstoParkingController extends Controller
             'payment_code' => 'request',
         ]);
 
-        if($validate->fails()) {
+        if ($validate->fails()) {
             return response()->json(['error' => "504"]);
         } else {
             try {
@@ -53,10 +55,9 @@ class CarstoParkingController extends Controller
                 $new_car_to_parking->payment_code = $request->get('payment_code');
                 $new_car_to_parking->save();
                 return response()->json(['success' => true, 'code' => "200"]);
-            } catch(Exception $e) {
+            } catch (Exception $e) {
                 return response()->json(['error' => "504"]);
             }
         }
     }
-
 }
