@@ -10,12 +10,17 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//Cars to Parkings API
 Route::get('/api/ctop', "API\\CarstoParkingController@index");
 Route::post('/api/ctop', "API\\CarstoParkingController@post");
 
+//Vehicles API
 Route::get('/api/vehicles', "API\\VehiclesController@index");
 Route::post('/api/vehicles', "API\\VehiclesController@post");
+
+//TAXES API
+Route::get('/api/taxes', "API\\TaxesController@index");
+Route::post('/api/vehicles', "API\\TaxesController@post");
 
 
 Route::get('/{any}', function (){
