@@ -9,7 +9,6 @@ import { Route, Switch } from "react-router-dom";
 import DemoNavbar from "../components/Navbars/Navbar";
 import Footer from "../components/Footer/Footer.jsx";
 import Sidebar from "../components/Sidebar/Sidebar.jsx";
-import PerfectScrollbar from "perfect-scrollbar";
 
 import routes from "../routes";
 
@@ -23,18 +22,6 @@ class Dashboard extends React.Component {
             activeColor: "info"
         };
         this.mainPanel = React.createRef();
-    }
-    componentDidMount() {
-        if (navigator.platform.indexOf("Win") > -1) {
-            ps = new PerfectScrollbar(this.mainPanel.current);
-            document.body.classList.toggle("perfect-scrollbar-on");
-        }
-    }
-    componentWillUnmount() {
-        if (navigator.platform.indexOf("Win") > -1) {
-            ps.destroy();
-            document.body.classList.toggle("perfect-scrollbar-on");
-        }
     }
     componentDidUpdate(e) {
         if (e.history.action === "PUSH") {
