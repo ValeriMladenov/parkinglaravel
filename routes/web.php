@@ -11,11 +11,12 @@
 |
 */
 
-Auth::routes();
+Route::get('/api/ctop', "API\\CarstoParkingController@index");
+Route::post('/api/ctop', "API\\CarstoParkingController@post");
+Route::get('/api/vehicles', "API\\VehiclesController@index");
+Route::post('/api/vehicles', "API\\VehiclesController@post");
 
-Route::get( '/api/ctop',"API\\CarstoParkingController@index");
-Route::post( '/api/ctop',"API\\CarstoParkingController@post");
-Route::get('/api/vehicles',"API\\VehiclesController@index");
 
-
-Route::get( '/{any}', function () { return view('home'); })->where('any', '.*');
+Route::get('/{any}', function (){
+    return view('home');
+})->where('any', '.*');
