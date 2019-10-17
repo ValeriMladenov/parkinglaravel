@@ -3,7 +3,9 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Cars;
 use App\CarsToParkings;
+use App\Parkings;
 use App\Http\Controllers\Controller;
 use App\Payments;
 use Carbon\Carbon;
@@ -12,27 +14,33 @@ use Illuminate\Support\Facades\Validator;
 
 class CarstoParkingController extends Controller
 {
-
     public function index()
     {
-        $cars = CarsToParkings::join('parkings', "parking_id", "=", "parkings.id")->get();
-        $payment = Payments::where('code', $cars[0]->payment_code)->first();
-        $current_time = Carbon::now();
-        $payment_time = $payment->created_at->format('H:i:s');
-        $paid_time = $payment->time;
-        $time_left = $paid_time - $current_time->diffInMinutes($payment_time);
-        if ($time_left < 0) {
-            $time_left = 'Изтекло';
-        }
+        $cars = Parkings::join('cars_to_parkings', "parking_id", "=", "parkings.id")->get();
+        $info = [];
+        foreach ($cars as $car) {
+            $payment_time = $car->created_at->format('H:i:s');
+            // return $payment_time; // 02:00:00
+            $paid_time = $car->parking_time; // 60
+            $time_left = $this->time_left($payment_time, $paid_time);
 
-        $data = [
-            'car_number' => $cars[0]->car_number,
-            'street' => $cars[0]->street,
-            'payment_code' => $cars[0]->payment_code,
-            'payment_time' => $time_left,
-        ];
-        return response()->json($data);
+            $info[] = [
+                'car_number' => $car->car_number,
+                'street' => $car->street,
+                'payment_code' => $car->payment_code,
+                'payment_time' => $time_left,
+            ];
+        }
+        return $info;
     }
+    private function time_left($payment_time, $paid_time)
+    {
+        $current_time = Carbon::now();
+        $a =  $paid_time - ($current_time->diffInMinutes($payment_time));
+        $hours = intdiv($a, 60) . ':' . ($a % 60);
+        return $hours;
+    }
+
 
     public function post(Request $request)
     {
