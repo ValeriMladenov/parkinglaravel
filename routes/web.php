@@ -12,8 +12,8 @@
 */
 
 //Cars to Parkings API
-Route::get('/api/ctop', "API\\CarstoParkingController@index");
-Route::post('/api/ctop', "API\\CarstoParkingController@post");
+Route::get('/api/ctop', "API\\VehiclesToParkingController@index");
+Route::post('/api/ctop', "API\\VehiclesToParkingController@post");
 
 //Vehicles API
 Route::get('/api/vehicles', "API\\VehiclesController@index");
