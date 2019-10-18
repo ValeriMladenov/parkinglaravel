@@ -10,5 +10,5 @@ class Payments extends Model
     protected $table = "payments";
     public $incrementing = true;
     public $timestamps = true;
-    protected $hidden =['ids'];
+    protected $hidden =['id',];
 }

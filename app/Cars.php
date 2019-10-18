@@ -10,5 +10,5 @@ class Cars extends Model
     protected $table = "cars";
     public $incrementing = true;
     public $timestamps = true;
-    protected $hidden =['id','user_id'];
+    protected $hidden =['id','user_id','updated_at',];
 }
