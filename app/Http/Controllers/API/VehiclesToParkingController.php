@@ -3,22 +3,19 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Cars;
-use App\CarsToParkings;
 use App\Parkings;
 use App\Http\Controllers\Controller;
-use App\Payments;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class CarstoParkingController extends Controller
+class VehiclesToParkingController extends Controller
 {
     public function index()
     {
         $cars = Parkings::join('cars_to_parkings', "parking_id", "=", "parkings.id")->get();
         $info = [];
-        foreach ($cars as $car) {
+        foreach($cars as $car) {
             $payment_time = $car->created_at->format('H:i:s');
             // return $payment_time; // 02:00:00
             $paid_time = $car->parking_time; // 60
@@ -33,10 +30,11 @@ class CarstoParkingController extends Controller
         }
         return $info;
     }
+
     private function time_left($payment_time, $paid_time)
     {
         $current_time = Carbon::now();
-        $a =  $paid_time - ($current_time->diffInMinutes($payment_time));
+        $a = $paid_time - ($current_time->diffInMinutes($payment_time));
         $hours = intdiv($a, 60) . ':' . ($a % 60);
         return $hours;
     }
@@ -52,8 +50,9 @@ class CarstoParkingController extends Controller
             'payment_code' => 'request',
         ]);
 
-        if ($validate->fails()) {
-            return response()->json(['error' => "504"]);
+        if($validate->fails()) {
+            //422: Unprocessable Entity)
+            return response()->json(['error' => "422"]);
         } else {
             try {
                 $new_car_to_parking = CarsToParkings();
@@ -63,8 +62,8 @@ class CarstoParkingController extends Controller
                 $new_car_to_parking->payment_code = $request->get('payment_code');
                 $new_car_to_parking->save();
                 return response()->json(['success' => true, 'code' => "200"]);
-            } catch (Exception $e) {
-                return response()->json(['error' => "504"]);
+            } catch(Exception $e) {
+                return response()->json(['error' => "422"]);
             }
         }
     }
