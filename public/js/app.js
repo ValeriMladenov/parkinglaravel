@@ -84481,12 +84481,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _views_AllCars_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./views/AllCars.jsx */ "./resources/js/views/AllCars.jsx");
 /* harmony import */ var _views_Payments_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./views/Payments.jsx */ "./resources/js/views/Payments.jsx");
 /* harmony import */ var _views_Taxes_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./views/Taxes.jsx */ "./resources/js/views/Taxes.jsx");
-/* harmony import */ var _views_Settings_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./views/Settings.jsx */ "./resources/js/views/Settings.jsx");
 /* Copyright (C) 2019 Valeri Mladenov & Kristian Ivanov
  * Authors: Valeri Mladenov & Kristian Ivanov
  * This code is licensed under GNU AGPLv3
  */
-
 
 
 
@@ -84521,12 +84519,6 @@ var routes = [{
   name: "Плащания",
   icon: "nc-icon nc-credit-card",
   component: _views_Payments_jsx__WEBPACK_IMPORTED_MODULE_3__["default"],
-  layout: "/admin"
-}, {
-  path: "/settings",
-  name: "Настройки",
-  icon: "nc-icon nc-settings-gear-65",
-  component: _views_Settings_jsx__WEBPACK_IMPORTED_MODULE_5__["default"],
   layout: "/admin"
 }];
 /* harmony default export */ __webpack_exports__["default"] = (routes);
@@ -85146,78 +85138,6 @@ var Payments = function Payments() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Payments);
-
-/***/ }),
-
-/***/ "./resources/js/views/Settings.jsx":
-/*!*****************************************!*\
-  !*** ./resources/js/views/Settings.jsx ***!
-  \*****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-/* Copyright (C) 2019 Valeri Mladenov & Kristian Ivanov
- * Authors: Valeri Mladenov & Kristian Ivanov
- * This code is licensed under GNU AGPLv3
- */
-
-
-
-var Settings =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(Settings, _React$Component);
-
-  function Settings() {
-    _classCallCheck(this, Settings);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(Settings).apply(this, arguments));
-  }
-
-  _createClass(Settings, [{
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "content"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
-        md: "12"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardHeader"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardTitle"], {
-        tag: "h4"
-      }, " \u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Table"], {
-        responsive: true
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", {
-        className: "text-primary"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "\u041D\u043E\u043C\u0435\u0440 \u043D\u0430 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "\u041F\u043B\u0430\u0449\u0430\u043D\u0435 \u043D\u043E\u043C\u0435\u0440"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "\u0411\u0438\u043B\u0435\u0442 \u043D\u043E\u043C\u0435\u0440"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u0412\u04204355\u0421\u0410"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "#65363"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "4354423")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u0412\u04204355\u0421\u0410"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "#65363"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "4354423")), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u0412\u04204355\u0421\u0410"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "#65363"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "4354423")), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u0412\u04204355\u0421\u0410"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "#65363"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "4354423")), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u0412\u04204355\u0421\u0410"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "#65363"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "4354423"))))))))));
-    }
-  }]);
-
-  return Settings;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-/* harmony default export */ __webpack_exports__["default"] = (Settings);
 
 /***/ }),
 
