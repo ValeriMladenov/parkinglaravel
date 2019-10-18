@@ -10,5 +10,5 @@ class Taxes extends Model
     protected $table = "taxes";
     public $incrementing = true;
     public $timestamps = true;
-    protected $hidden =['ids'];
+    protected $hidden = ['id', 'created_at', 'updated_at'];
 }

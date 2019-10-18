@@ -20,11 +20,17 @@ import {
 const Cars = () => {
     const [data, setData] = useState([]);
 
-    useEffect(() => {
-        setInterval(async () => {
-            const result = await axios("http://parkingvratsa.test/api/ctop");
+    const loadData = async () => {
+        const result = await axios("http://parkingvratsa.test/api/ctop");
 
-            setData(result.data);
+        setData(result.data);
+    };
+
+    useEffect(() => {
+        loadData();
+
+        setInterval(async () => {
+            loadData();
         }, 5000);
     }, []);
 

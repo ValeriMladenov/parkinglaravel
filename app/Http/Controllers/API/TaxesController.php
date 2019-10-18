@@ -13,20 +13,18 @@ class TaxesController extends  Controller
 {
     public function index()
     {
-            $taxes = Taxes::all();
+        $motorcycles = Taxes::where('car_type', '1')->get();
 
-            return response()->json($taxes);
-        
+        $automobiles = Taxes::where('car_type', '2')->get();
+
+        $microbuses = Taxes::where('car_type', '3')->get();
+
+        return response()->json([$motorcycles, $automobiles, $microbuses]);
     }
 
 
     public function post(Request $request)
     {
-        $validator = Validator::make($request->all(),[
-
-
-        ]);
-
+        $validator = Validator::make($request->all(), []);
     }
-
 }
