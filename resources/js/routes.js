@@ -8,7 +8,6 @@ import Cars from "./views/Cars.jsx";
 import AllCars from "./views/AllCars.jsx";
 import Payments from "./views/Payments.jsx";
 import Taxes from "./views/Taxes.jsx";
-import Settings from "./views/Settings.jsx";
 var routes = [
     {
         path: "/dashboard",
@@ -45,12 +44,5 @@ var routes = [
         component: Payments,
         layout: "/admin"
     },
-    {
-        path: "/settings",
-        name: "Настройки",
-        icon: "nc-icon nc-settings-gear-65",
-        component: Settings,
-        layout: "/admin"
-    }
 ];
 export default routes;
