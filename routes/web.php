@@ -27,6 +27,9 @@ Route::post('/api/taxes', "API\\TaxesController@post");
 Route::get('/api/payments', "API\\PaymentsController@index");
 Route::post('/api/payments', "API\\PaymentsController@post");
 
+//Statistics API
+Route::get('/api/statistics', "API\\StatisticsController@index");
+
 
 Route::get('/{any}', function (){
     return view('home');
