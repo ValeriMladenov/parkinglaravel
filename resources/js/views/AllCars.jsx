@@ -3,7 +3,7 @@
  * This code is licensed under GNU AGPLv3
  */
 
-import React, sfrom "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 // reactstrap components

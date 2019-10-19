@@ -84463,7 +84463,7 @@ function (_React$Component) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/logo.svg?5d5d9eefa31e5e13a6610d9fa7a283bb";
+module.exports = "/images/logo.svg?ee7cd8ed2dcec943251eb2763684fc6f";
 
 /***/ }),
 
@@ -84544,9 +84544,9 @@ var type = {
         label: "Emails",
         pointRadius: 0,
         pointHoverRadius: 0,
-        backgroundColor: ["#e3e3e3", "#4acccd", "#fcc468", "#ef8157"],
+        backgroundColor: ["#4acccd", "#fcc468", "#ef8157"],
         borderWidth: 0,
-        data: [342, 480, 530, 120]
+        data: [50, 234, 100]
       }]
     };
   },
@@ -85245,8 +85245,8 @@ var Taxes = function Taxes() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Applications/MAMP/parkinglaravel/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Applications/MAMP/parkinglaravel/resources/js/assets/scss/parking-vratsa.scss */"./resources/js/assets/scss/parking-vratsa.scss");
+__webpack_require__(/*! E:\XAMPP\htdocs\projects\parkingproject\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! E:\XAMPP\htdocs\projects\parkingproject\resources\js\assets\scss\parking-vratsa.scss */"./resources/js/assets/scss/parking-vratsa.scss");
 
 
 /***/ })

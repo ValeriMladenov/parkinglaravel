@@ -15,7 +15,7 @@ class VehiclesToParkingController extends Controller
     {
         $cars = Parkings::join('cars_to_parkings', "parking_id", "=", "parkings.id")->get();
         $info = [];
-        foreach($cars as $car) {
+        foreach ($cars as $car) {
             $payment_time = $car->created_at->format('H:i:s');
             // return $payment_time; // 02:00:00
             $paid_time = $car->parking_time; // 60
@@ -46,11 +46,11 @@ class VehiclesToParkingController extends Controller
         $validate = Validator::make($request->all(), [
             'car_number' => 'required|max:8',
             'parking_id' => 'required',
-            'parking_time' => 'request|max:120',
-            'payment_code' => 'request',
+            'parking_time' => 'required|max:120',
+            'payment_code' => 'required',
         ]);
 
-        if($validate->fails()) {
+        if ($validate->fails()) {
             //422: Unprocessable Entity)
             return response()->json(['error' => "422"]);
         } else {
@@ -62,7 +62,7 @@ class VehiclesToParkingController extends Controller
                 $new_car_to_parking->payment_code = $request->get('payment_code');
                 $new_car_to_parking->save();
                 return response()->json(['success' => true, 'code' => "200"]);
-            } catch(Exception $e) {
+            } catch (Exception $e) {
                 return response()->json(['error' => "422"]);
             }
         }
